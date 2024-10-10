@@ -1,35 +1,30 @@
 /*
-Crie um algoritmo que leia o salário bruto de 5 pessoas, 
-e ao final, mostre o salário líquido de todos, 
-considerando 12% de INSS a descontar.
+Crie um algoritmo que leia 20 números inteiros e armazene-os num vetor. 
+Armazene os números pares no vetor PAR e os números IMPARES no vetor impar. 
+Deve-se no final mostrar os três vetores.
 */
-function lerSalarioBruto() {
-    let salBruto = [];
-    for (let i = 0; i < 5; i++) {
-        let salariobruto = prompt(`Informe o ${i + 1}º Salário Bruto`);
-        if (isNaN(salariobruto) || salariobruto.trim() == '') {
-            alert("Salário Bruto Inválido!");
-            salariobruto = prompt(`Informe o ${i + 1}º Salário Bruto novamente:`);
+function lerNumeros() {
+    let numeros = [];
+    for (let i = 0; i < 20; i++) {
+        let numero = prompt(`Informe o ${i + 1}º Número:`);
+        if (isNaN(numero) || numero.trim() == '') {
+            alert("Numero Inválido!");
+            numero = prompt(`Informe o ${i + 1}º Número novamente:`);
         }
-        salariobruto = parseFloat(salariobruto);
-
-        salBruto.push(salariobruto);
+        numero = parseFloat(numero);
+        numeros.push(numero);
     }
-    return salBruto;
+    return numeros;
 }
 
-function calcularLiquido(lista) {
-    let msg = "";
-    for (let i = 0; i < lista.length; i++) {
-        msg += `O ${i+1}º salario líquido sem o INSS é R$ ${(lista[i] * 0.88).toFixed(2)} \n`;
-    }
-    return msg;
-}
+let listaGeral = lerNumeros();
+let listaPares = listaGeral.filter(num => (num % 2 === 0));
+let listaImpares = listaGeral.filter(num => (num % 2 !== 0));
 
-let salarios = lerSalarioBruto();
-let mensagem = calcularLiquido(salarios);
-alert(mensagem);
-
+let msg = `A lista de numeros gerais é ${listaGeral.join(', ')} \n
+A lista de numeros pares é ${listaPares.join(', ')} \n 
+A lista de numeros ímpares é ${listaImpares.join(', ')} \n`
+alert(msg);
 
 
 
