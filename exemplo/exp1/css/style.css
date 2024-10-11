@@ -1,0 +1,35 @@
+html, body {
+    height: 100%; /* Garante que html e body ocupem 100% da altura da tela */
+    margin: 0; /* Remove margens padrão */
+}
+
+body {
+    background-image: url("../img/floresta.jpg"); /* Altere para o URL da imagem desejada */
+    background-repeat: no-repeat;
+    background-size: cover; /* A imagem cobre todo o fundo */
+    background-position: center; /* Centraliza a imagem */
+    color: #fff; /* Texto branco para melhor visibilidade */
+    display: flex; /* Usar flexbox para centralizar */
+    flex-direction: column; /* Direção da coluna */
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    height: 100vh; /* Usa a altura total da viewport */
+}
+
+.container {
+    background-color: rgba(110, 88, 88, 0.5); /* Fundo escuro semi-transparente para o formulário */
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px; /* Limita a largura da container */
+    width: 100%; /* Permite que a container use toda a largura disponível */
+}
+
+table {
+    margin-top: 20px;
+    width: 100%; /* Faz com que a tabela use toda a largura da container */
+}
+
+#message {
+    color: yellow; /* Cor para mensagens informativas */
+}
